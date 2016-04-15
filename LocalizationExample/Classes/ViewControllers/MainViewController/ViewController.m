@@ -7,33 +7,28 @@
 //
 
 #import "ViewController.h"
+#import "SettingsTableViewController.h"
+#import "LocalizationManager.h"
+
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
-
-static NSString *const KeyLanguageDefault = @"Base";
-static NSString *const KeyLanguageEnglish = @"en";
-static NSString *const KeyLanguageArabic = @"ar";
-static NSString *const KeyLanguageChinese = @"zh";
-static NSString *const KeyLanguageUkrainian = @"uk";
 
 @interface ViewController ()
 
 @property (nonatomic, weak) IBOutlet UIButton *helloButton;
 @property (nonatomic, weak) IBOutlet UIButton *settingsButton;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
-@property (strong, nonatomic) NSBundle *currentBundle;
 
 @end
 
 @implementation ViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-
-	[self prepareLocalization];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,28 +38,41 @@ static NSString *const KeyLanguageUkrainian = @"uk";
 	[self prepareContent];
 }
 
-- (void)prepareLocalization
-{
-	NSString *startLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
-	[self changeLocalization:[startLanguage substringToIndex:2]];
-}
-
-- (void)changeLocalization:(NSString *)languageKey
-{
-	NSString *path = [[NSBundle mainBundle] pathForResource:languageKey ofType:@"lproj"];
-	if (path.length) {
-		self.currentBundle = [NSBundle bundleWithPath:path];
-	} else {
-		self.currentBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:KeyLanguageDefault ofType:@"lproj"] ];
-	}
-}
+#pragma mark - Configure
 
 - (void)prepareContent
 {
-	[self.helloButton setTitle:NSLocalizedStringFromTableInBundle(@"ButtonTextKey", nil, self.currentBundle, nil) forState:UIControlStateNormal];
-	[self.imageView setImage:[UIImage imageNamed:NSLocalizedStringFromTableInBundle(@"imageNameKey", nil, self.currentBundle, nil)]];
+	[self.helloButton setTitle:NSLocalizedStringFromTableInBundle(@"ButtonTextKey", nil, [LocalizationManager service].currentBundle, nil) forState:UIControlStateNormal];
+	[self.imageView setImage:[UIImage imageNamed:NSLocalizedStringFromTableInBundle(@"imageNameKey", nil, [LocalizationManager service].currentBundle, nil)]];
 	self.helloButton.layer.cornerRadius = 7;
 	self.settingsButton.layer.cornerRadius = 7;
+}
+
+- (void)preparePlayer
+{
+	NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:NSLocalizedStringFromTableInBundle(@"mp3NameKey", nil, [LocalizationManager service].currentBundle, nil) ofType:@"mp3"]];
+	NSError *error;
+	_audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+	if (error)
+	{
+		NSLog(@"Error in audioPlayer: %@",
+			  [error localizedDescription]);
+	} else {
+		[_audioPlayer prepareToPlay];
+	}
+}
+
+#pragma mark - Actions
+
+- (IBAction)sayHelloPressed:(id)sender
+{
+	[self preparePlayer];
+	[_audioPlayer play];
+}
+
+- (IBAction)settingsPressed:(id)sender
+{
+	[self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SettingsVC"] animated:YES completion:nil];
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300BF2371CC11EEA001DB9A0 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 300BF2361CC11EEA001DB9A0 /* LocalizationManager.m */; };
 		300F615E1CC0D30400F5C5E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F614C1CC0D30400F5C5E0 /* AppDelegate.m */; };
 		300F61631CC0D30400F5C5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300F61531CC0D30400F5C5E0 /* Assets.xcassets */; };
 		300F61641CC0D30400F5C5E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F615A1CC0D30400F5C5E0 /* ViewController.m */; };
@@ -18,11 +19,12 @@
 		300F61721CC0D46700F5C5E0 /* hello_uk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 300F616E1CC0D46700F5C5E0 /* hello_uk.mp3 */; };
 		300F61731CC0D4E800F5C5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300F61751CC0D4E800F5C5E0 /* Main.storyboard */; };
 		300F61841CC0DA7200F5C5E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 300F61861CC0DA7200F5C5E0 /* Localizable.strings */; };
-		300F618D1CC0E03600F5C5E0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 300F618C1CC0E03600F5C5E0 /* Info.plist */; };
 		3099C6FC1CC0E7BF008DCAA2 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3099C6FB1CC0E7BF008DCAA2 /* SettingsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300BF2351CC11EEA001DB9A0 /* LocalizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
+		300BF2361CC11EEA001DB9A0 /* LocalizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
 		300F612F1CC0D18A00F5C5E0 /* LocalizationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalizationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		300F614B1CC0D30400F5C5E0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		300F614C1CC0D30400F5C5E0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300BF2331CC110D9001DB9A0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				300BF2341CC110D9001DB9A0 /* LocalizationManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		300BF2341CC110D9001DB9A0 /* LocalizationManager */ = {
+			isa = PBXGroup;
+			children = (
+				300BF2351CC11EEA001DB9A0 /* LocalizationManager.h */,
+				300BF2361CC11EEA001DB9A0 /* LocalizationManager.m */,
+			);
+			path = LocalizationManager;
+			sourceTree = "<group>";
+		};
 		300F61261CC0D18A00F5C5E0 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +166,7 @@
 		300F61561CC0D30400F5C5E0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				300BF2331CC110D9001DB9A0 /* Managers */,
 				300F61571CC0D30400F5C5E0 /* ViewControllers */,
 			);
 			path = Classes;
@@ -259,7 +279,6 @@
 			files = (
 				300F61711CC0D46700F5C5E0 /* hello_en.mp3 in Resources */,
 				300F616F1CC0D46700F5C5E0 /* hello_ar.mp3 in Resources */,
-				300F618D1CC0E03600F5C5E0 /* Info.plist in Resources */,
 				300F61721CC0D46700F5C5E0 /* hello_uk.mp3 in Resources */,
 				300F61731CC0D4E800F5C5E0 /* Main.storyboard in Resources */,
 				300F61691CC0D37B00F5C5E0 /* LaunchScreen.storyboard in Resources */,
@@ -279,6 +298,7 @@
 				3099C6FC1CC0E7BF008DCAA2 /* SettingsTableViewController.m in Sources */,
 				300F61641CC0D30400F5C5E0 /* ViewController.m in Sources */,
 				300F61661CC0D30400F5C5E0 /* main.m in Sources */,
+				300BF2371CC11EEA001DB9A0 /* LocalizationManager.m in Sources */,
 				300F615E1CC0D30400F5C5E0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -386,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -398,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/LocalizationExample/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iOS-task.LocalizationExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/LocalizationExample/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iOS-task.LocalizationExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";

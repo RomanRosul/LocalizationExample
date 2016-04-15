@@ -10,5 +10,5 @@
 "ButtonTextKey" = "侬好";
 
 //MediaFileNames
-"imageNameKey" = "zh";
+"imageNameKey" = "zh-Hans";
 "mp3NameKey" = "hello_zh";
