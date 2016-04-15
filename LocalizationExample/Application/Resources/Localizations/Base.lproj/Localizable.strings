@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  LocalizationExample
+
+  Created by Roman R on 15.04.16.
+  Copyright © 2016 iOS_task. All rights reserved.
+*/
+
+//Strings
+"ButtonTextKey" = "Hello";
+
+//MediaFileNames
+"imageNameKey" = "en";
+"mp3NameKey" = "hello_en";
