@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300477591CC4B9740028168F /* DismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 300477551CC4B9740028168F /* DismissAnimation.m */; };
+		3004775A1CC4B9740028168F /* PresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 300477581CC4B9740028168F /* PresentAnimation.m */; };
 		300BF2371CC11EEA001DB9A0 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 300BF2361CC11EEA001DB9A0 /* LocalizationManager.m */; };
 		300F615E1CC0D30400F5C5E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F614C1CC0D30400F5C5E0 /* AppDelegate.m */; };
 		300F61631CC0D30400F5C5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300F61531CC0D30400F5C5E0 /* Assets.xcassets */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300477541CC4B9740028168F /* DismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissAnimation.h; sourceTree = "<group>"; };
+		300477551CC4B9740028168F /* DismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissAnimation.m; sourceTree = "<group>"; };
+		300477571CC4B9740028168F /* PresentAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentAnimation.h; sourceTree = "<group>"; };
+		300477581CC4B9740028168F /* PresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentAnimation.m; sourceTree = "<group>"; };
 		300BF2351CC11EEA001DB9A0 /* LocalizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
 		300BF2361CC11EEA001DB9A0 /* LocalizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
 		300F612F1CC0D18A00F5C5E0 /* LocalizationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalizationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +69,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300477521CC4B9740028168F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				300477561CC4B9740028168F /* PresentAnimation */,
+				300477531CC4B9740028168F /* DismissAnimation */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		300477531CC4B9740028168F /* DismissAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				300477541CC4B9740028168F /* DismissAnimation.h */,
+				300477551CC4B9740028168F /* DismissAnimation.m */,
+			);
+			path = DismissAnimation;
+			sourceTree = "<group>";
+		};
+		300477561CC4B9740028168F /* PresentAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				300477571CC4B9740028168F /* PresentAnimation.h */,
+				300477581CC4B9740028168F /* PresentAnimation.m */,
+			);
+			path = PresentAnimation;
+			sourceTree = "<group>";
+		};
 		300BF2331CC110D9001DB9A0 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +199,7 @@
 		300F61561CC0D30400F5C5E0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				300477521CC4B9740028168F /* Animations */,
 				300BF2331CC110D9001DB9A0 /* Managers */,
 				300F61571CC0D30400F5C5E0 /* ViewControllers */,
 			);
@@ -299,6 +333,8 @@
 				300F61641CC0D30400F5C5E0 /* ViewController.m in Sources */,
 				300F61661CC0D30400F5C5E0 /* main.m in Sources */,
 				300BF2371CC11EEA001DB9A0 /* LocalizationManager.m in Sources */,
+				300477591CC4B9740028168F /* DismissAnimation.m in Sources */,
+				3004775A1CC4B9740028168F /* PresentAnimation.m in Sources */,
 				300F615E1CC0D30400F5C5E0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

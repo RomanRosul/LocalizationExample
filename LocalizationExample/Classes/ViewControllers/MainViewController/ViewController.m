@@ -34,7 +34,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	
 	[self prepareContent];
 }
 
@@ -42,8 +41,16 @@
 
 - (void)prepareContent
 {
+	self.imageView.image = [UIImage imageNamed:NSLocalizedStringFromTableInBundle(@"imageNameKey", nil, [LocalizationManager service].currentBundle, nil)];
+	
+	CATransition *transition = [CATransition animation];
+	transition.duration = 1.0f;
+	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+	transition.type = kCATransitionFade;
+	
+	[self.imageView.layer addAnimation:transition forKey:nil];
+	
 	[self.helloButton setTitle:NSLocalizedStringFromTableInBundle(@"ButtonTextKey", nil, [LocalizationManager service].currentBundle, nil) forState:UIControlStateNormal];
-	[self.imageView setImage:[UIImage imageNamed:NSLocalizedStringFromTableInBundle(@"imageNameKey", nil, [LocalizationManager service].currentBundle, nil)]];
 	self.helloButton.layer.cornerRadius = 7;
 	self.settingsButton.layer.cornerRadius = 7;
 }
@@ -72,7 +79,10 @@
 
 - (IBAction)settingsPressed:(id)sender
 {
-	[self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SettingsVC"] animated:YES completion:nil];
+	SettingsTableViewController * settingsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsVC"] ;
+	settingsVC.modalPresentationStyle = UIModalPresentationCustom;
+	settingsVC.transitioningDelegate = settingsVC;
+	[self presentViewController:settingsVC animated:YES completion:nil];
 }
 
 @end

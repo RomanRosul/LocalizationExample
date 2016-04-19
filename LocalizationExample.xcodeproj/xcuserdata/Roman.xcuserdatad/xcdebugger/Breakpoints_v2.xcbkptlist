@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LocalizationExample/Classes/ViewControllers/MainViewController/ViewController.m"
-            timestampString = "482422135.445647"
+            timestampString = "482744912.456002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-settingsPressed:"
             landmarkType = "5">
          </BreakpointContent>
